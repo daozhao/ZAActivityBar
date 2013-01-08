@@ -91,7 +91,7 @@ This is the catch all method:
 
 ### How does it determine what to show?
 
-Pretty simple, first action in is the primary action. Everything else is queued up and ignored until the primary action is dismissed. Once the primary action is dismissed, the next item in the queue becomes the primary action.
+Pretty simple, last action in is the primary action. Once the primary action is dismissed, the next item in the queue becomes the primary action.
 
 ### Can I change the order or set items have a higher priority?
 _No_

@@ -107,9 +107,13 @@
     ZAActivityAction *a = [self getAction:action];
     
     if (!a) {
-        [_actionArray addObject:action];
+        [_actionArray insertObject:action atIndex:0];
+//        [_actionArray addObject:action];
         a = [ZAActivityAction new];
         a.name = action;
+    } else {
+        [_actionArray removeObject:action];
+        [_actionArray insertObject:action atIndex:0];
     }
 
     a.status = status;
@@ -292,6 +296,7 @@
 
 - (void)showImage:(UIImage*)image status:(NSString*)status duration:(NSTimeInterval)duration forAction:(NSString *)action {
     
+    [self addAction:action withStatus:status];
     // Only continue if the action should be visible.
     BOOL isPrimaryAction = [self isPrimaryAction:action];
     if (!isPrimaryAction) {
@@ -300,10 +305,10 @@
     }
 
     // Add the action if it doesn't exist yet
-    if (![self actionExists:action]) {
-        [self addAction:action withStatus:status];
-    }
-    
+//    if (![self actionExists:action]) {
+//        [self addAction:action withStatus:status];
+//    }
+//    
     if(![ZAActivityBar isVisible])
         [ZAActivityBar showForAction:action];
     
