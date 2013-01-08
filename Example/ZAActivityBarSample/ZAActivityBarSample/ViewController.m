@@ -43,19 +43,21 @@
 - (IBAction) show:(id)sender {
     [self dismissTextField];
     NSString *action = [self actionForSender:sender show:YES];
-    [ZAActivityBar showWithStatus:_textbox.text forAction:action];
+    [ZAActivityBar showWithStatus:[NSString stringWithFormat:@"%@(%d)%@",@"Show",[(UIButton *)sender tag],_textbox.text] forAction:action];
 }
 
 - (IBAction) showSuccess:(id)sender {
     [self dismissTextField];
     NSString *action = [self actionForSender:sender show:NO];
-    [ZAActivityBar showSuccessWithStatus:_textbox.text forAction:action];
+    [ZAActivityBar showSuccessWithStatus:[NSString stringWithFormat:@"%@(%d)%@",@"Success",[(UIButton *)sender tag],_textbox.text] forAction:action];
+//    [ZAActivityBar showSuccessWithStatus:_textbox.text forAction:action];
 }
 
 - (IBAction) showError:(id)sender {
     [self dismissTextField];
     NSString *action = [self actionForSender:sender show:NO];
-    [ZAActivityBar showErrorWithStatus:_textbox.text forAction:action];
+    [ZAActivityBar showErrorWithStatus:[NSString stringWithFormat:@"%@(%d)%@",@"Error",[(UIButton *)sender tag],_textbox.text] forAction:action];
+//    [ZAActivityBar showErrorWithStatus:_textbox.text forAction:action];
 }
 
 - (IBAction) dismiss:(id)sender {
