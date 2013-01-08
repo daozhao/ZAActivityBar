@@ -319,7 +319,8 @@
         [self setStatus:status];
         [self.spinnerView stopAnimating];
         
-        self.fadeOutTimer = [NSTimer scheduledTimerWithTimeInterval:duration
+//        self.fadeOutTimer =
+        [NSTimer scheduledTimerWithTimeInterval:duration
                                                              target:self
                                                            selector:@selector(dismissFromTimer:)
                                                            userInfo:action
