@@ -684,7 +684,7 @@
 		stringLabel.adjustsFontSizeToFitWidth = YES;
 		stringLabel.textAlignment = UITextAlignmentLeft;
 		stringLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-        stringLabel.autoresizingMask = (UIViewAutoresizingFlexibleWidth);
+        stringLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
 		stringLabel.font = [UIFont boldSystemFontOfSize:14];
 		stringLabel.shadowColor = [UIColor blackColor];
 		stringLabel.shadowOffset = CGSizeMake(0, -1);
